@@ -1,0 +1,74 @@
+2023-07-12T10:39:02+00:00 CRITICAL syntax error, unexpected '?>', expecting '(' in C:\wamp64\www\Wordpress\katich\wp-content\themes\katich\functions.php on line 12
+
+2023-07-12T10:54:26+00:00 CRITICAL Uncaught Error: Using $this when not in object context in C:\wamp64\www\Wordpress\katich\wp-content\themes\katich\functions.php:12
+Stack trace:
+#0 C:\wamp64\www\Wordpress\katich\wp-settings.php(591): include()
+#1 C:\wamp64\www\Wordpress\katich\wp-config.php(96): require_once('C:\\wamp64\\www\\W...')
+#2 C:\wamp64\www\Wordpress\katich\wp-load.php(50): require_once('C:\\wamp64\\www\\W...')
+#3 C:\wamp64\www\Wordpress\katich\wp-admin\admin-ajax.php(22): require_once('C:\\wamp64\\www\\W...')
+#4 {main}
+  thrown in C:\wamp64\www\Wordpress\katich\wp-content\themes\katich\functions.php on line 12
+
+2023-07-12T10:54:29+00:00 CRITICAL Uncaught Error: Using $this when not in object context in C:\wamp64\www\Wordpress\katich\wp-content\themes\katich\functions.php:12
+Stack trace:
+#0 C:\wamp64\www\Wordpress\katich\wp-settings.php(591): include()
+#1 C:\wamp64\www\Wordpress\katich\wp-config.php(96): require_once('C:\\wamp64\\www\\W...')
+#2 C:\wamp64\www\Wordpress\katich\wp-load.php(50): require_once('C:\\wamp64\\www\\W...')
+#3 C:\wamp64\www\Wordpress\katich\wp-admin\admin.php(34): require_once('C:\\wamp64\\www\\W...')
+#4 C:\wamp64\www\Wordpress\katich\wp-admin\edit.php(10): require_once('C:\\wamp64\\www\\W...')
+#5 {main}
+  thrown in C:\wamp64\www\Wordpress\katich\wp-content\themes\katich\functions.php on line 12
+
+2023-07-12T11:54:53+00:00 CRITICAL Uncaught Error: Call to undefined function get_slick_slider_slide_title() in C:\wamp64\www\Wordpress\katich\wp-content\themes\katich\tempalte-pocetna.php:19
+Stack trace:
+#0 C:\wamp64\www\Wordpress\katich\wp-includes\template-loader.php(106): include()
+#1 C:\wamp64\www\Wordpress\katich\wp-blog-header.php(19): require_once('C:\\wamp64\\www\\W...')
+#2 C:\wamp64\www\Wordpress\katich\index.php(17): require('C:\\wamp64\\www\\W...')
+#3 {main}
+  thrown in C:\wamp64\www\Wordpress\katich\wp-content\themes\katich\tempalte-pocetna.php on line 19
+
+2023-07-12T11:56:28+00:00 CRITICAL syntax error, unexpected end of file in C:\wamp64\www\Wordpress\katich\wp-content\themes\katich\functions.php on line 62
+
+2023-07-12T11:57:33+00:00 CRITICAL Uncaught Error: Call to undefined function get_field() in C:\wamp64\www\Wordpress\katich\wp-content\themes\katich\functions.php:46
+Stack trace:
+#0 C:\wamp64\www\Wordpress\katich\wp-content\themes\katich\functions.php(67): get_slick_slider_slide_title(123, 2)
+#1 C:\wamp64\www\Wordpress\katich\wp-settings.php(591): include('C:\\wamp64\\www\\W...')
+#2 C:\wamp64\www\Wordpress\katich\wp-config.php(96): require_once('C:\\wamp64\\www\\W...')
+#3 C:\wamp64\www\Wordpress\katich\wp-load.php(50): require_once('C:\\wamp64\\www\\W...')
+#4 C:\wamp64\www\Wordpress\katich\wp-blog-header.php(13): require_once('C:\\wamp64\\www\\W...')
+#5 C:\wamp64\www\Wordpress\katich\index.php(17): require('C:\\wamp64\\www\\W...')
+#6 {main}
+  thrown in C:\wamp64\www\Wordpress\katich\wp-content\themes\katich\functions.php on line 46
+
+2023-07-12T11:58:28+00:00 CRITICAL Uncaught Error: Call to undefined function get_field() in C:\wamp64\www\Wordpress\katich\wp-content\themes\katich\functions.php:46
+Stack trace:
+#0 C:\wamp64\www\Wordpress\katich\wp-content\themes\katich\functions.php(71): get_slick_slider_slide_title(123, 2)
+#1 C:\wamp64\www\Wordpress\katich\wp-settings.php(591): include('C:\\wamp64\\www\\W...')
+#2 C:\wamp64\www\Wordpress\katich\wp-config.php(96): require_once('C:\\wamp64\\www\\W...')
+#3 C:\wamp64\www\Wordpress\katich\wp-load.php(50): require_once('C:\\wamp64\\www\\W...')
+#4 C:\wamp64\www\Wordpress\katich\wp-blog-header.php(13): require_once('C:\\wamp64\\www\\W...')
+#5 C:\wamp64\www\Wordpress\katich\index.php(17): require('C:\\wamp64\\www\\W...')
+#6 {main}
+  thrown in C:\wamp64\www\Wordpress\katich\wp-content\themes\katich\functions.php on line 46
+
+2023-07-12T11:58:29+00:00 CRITICAL Uncaught Error: Call to undefined function get_field() in C:\wamp64\www\Wordpress\katich\wp-content\themes\katich\functions.php:46
+Stack trace:
+#0 C:\wamp64\www\Wordpress\katich\wp-content\themes\katich\functions.php(71): get_slick_slider_slide_title(123, 2)
+#1 C:\wamp64\www\Wordpress\katich\wp-settings.php(591): include('C:\\wamp64\\www\\W...')
+#2 C:\wamp64\www\Wordpress\katich\wp-config.php(96): require_once('C:\\wamp64\\www\\W...')
+#3 C:\wamp64\www\Wordpress\katich\wp-load.php(50): require_once('C:\\wamp64\\www\\W...')
+#4 C:\wamp64\www\Wordpress\katich\wp-admin\admin-ajax.php(22): require_once('C:\\wamp64\\www\\W...')
+#5 {main}
+  thrown in C:\wamp64\www\Wordpress\katich\wp-content\themes\katich\functions.php on line 46
+
+2023-07-12T11:58:30+00:00 CRITICAL Uncaught Error: Call to undefined function get_field() in C:\wamp64\www\Wordpress\katich\wp-content\themes\katich\functions.php:46
+Stack trace:
+#0 C:\wamp64\www\Wordpress\katich\wp-content\themes\katich\functions.php(71): get_slick_slider_slide_title(123, 2)
+#1 C:\wamp64\www\Wordpress\katich\wp-settings.php(591): include('C:\\wamp64\\www\\W...')
+#2 C:\wamp64\www\Wordpress\katich\wp-config.php(96): require_once('C:\\wamp64\\www\\W...')
+#3 C:\wamp64\www\Wordpress\katich\wp-load.php(50): require_once('C:\\wamp64\\www\\W...')
+#4 C:\wamp64\www\Wordpress\katich\wp-blog-header.php(13): require_once('C:\\wamp64\\www\\W...')
+#5 C:\wamp64\www\Wordpress\katich\index.php(17): require('C:\\wamp64\\www\\W...')
+#6 {main}
+  thrown in C:\wamp64\www\Wordpress\katich\wp-content\themes\katich\functions.php on line 46
+

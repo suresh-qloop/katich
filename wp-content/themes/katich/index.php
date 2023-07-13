@@ -1,0 +1,6 @@
+<?php
+
+// Silente is golden
+
+?>
+
