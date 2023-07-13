@@ -91,5 +91,5 @@ function bottom_slider_shortcode($atts) {
     return $output;
 }
 add_shortcode('bottom-slider', 'bottom_slider_shortcode');
-
+//sample comment
 ?>
