@@ -112,4 +112,31 @@ $(document).ready(function () {
 	//end header scrolled
 }); //end document ready
 
+jQuery(document).ready(function ($) {
+	$('.add_to_cart_button').on('click', function (e) {
+		e.preventDefault();
+		var productName = $(this).closest('.product').find('.woocommerce-loop-product__title').text();
+		var messageWrapper = $('.woocommerce-message');
+		var message = messageWrapper.text().replace('“Kujundžuša (vrhunsko vino)”', productName);
+		$('#added-product-name').text(productName);
+		messageWrapper.html(message).show();
+		$(this).trigger('woocommerce_added_to_cart');
+	});
+});
 
+//  + - button js 
+$(document).ready(function () {
+	$('.q-plus').click(function () {
+		var input = $(this).siblings('input');
+		var currentValue = parseInt(input.val());
+		input.val(currentValue + 1);
+	});
+
+	$('.q-minus').click(function () {
+		var input = $(this).siblings('input');
+		var currentValue = parseInt(input.val());
+		if (currentValue > 0) {
+			input.val(currentValue - 1);
+		}
+	});
+});

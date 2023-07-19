@@ -2,8 +2,8 @@
 
 // Template Name:vinarija
 
-
 get_header();
+wp_head();
 
 ?>
 
@@ -15,7 +15,7 @@ get_header();
 <section class="pages space dark-bg">
     <div class="container">
         <div class="title title-center">
-            <h1>Naša Vinarija</h1>
+            <h1><?php the_title(); ?></h1>
         </div>
         <div class="pages-text">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis aperiam, eveniet alias ea repudiandae id? Deserunt assumenda quo ut amet officiis rerum animi! Quos eum, hic ducimus quis cumque maiores quo magni quaerat omnis delectus voluptatibus fugit repellat ab ipsam blanditiis doloremque ex est illum harum laboriosam. Voluptatibus, eius asperiores.</p>
@@ -59,20 +59,26 @@ get_header();
     </div>
 </section>
 <section class="image-slider">
-    <article class="image-slide">
-        <a href="<?php bloginfo('template_directory'); ?>/images/image1.jpg" data-fancybox="gallery"><img src="<?php bloginfo('template_directory'); ?>/images/image1.jpg" alt="Katich - Katić Winery"></a>
-    </article>
-    <article class="image-slide">
-        <a href="<?php bloginfo('template_directory'); ?>/images/image2.jpg" data-fancybox="gallery"><img src="<?php bloginfo('template_directory'); ?>/images/image2.jpg" alt="Katich - Katić Winery"></a>
-    </article>
-    <article class="image-slide">
-        <a href="<?php bloginfo('template_directory'); ?>/images/image3.jpg" data-fancybox="gallery"><img src="<?php bloginfo('template_directory'); ?>/images/image3.jpg" alt="Katich - Katić Winery"></a>
-    </article>
+    <?php
+    $slider_posts = new WP_Query(array(
+        'post_type' => 'slider2',
+        'posts_per_page' => -1,
+        'orderby' => 'menu_order',
+        'order' => 'ASC',
+    ));
+
+    while ($slider_posts->have_posts()) : $slider_posts->the_post();
+    ?>
+        <article class="image-slide">
+            <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="Katich - Katić Winery">
+        </article>
+    <?php endwhile; ?>
 </section>
 
 
 <?php
 
+wp_footer();
 get_footer();
 
 ?>

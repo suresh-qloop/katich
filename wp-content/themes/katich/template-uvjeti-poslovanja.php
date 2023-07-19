@@ -3,6 +3,7 @@
 // Template Name:uvjeti poslovanja
 
 get_header();
+wp_head();
 
 ?>
 
@@ -14,7 +15,7 @@ get_header();
 <section class="pages space">
     <div class="container">
         <div class="title mb-6">
-            <h1>Opći uvjeti poslovanja</h1>
+            <h1><?php the_title(); ?></h1>
         </div>
         <div class="text">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis aperiam, eveniet alias ea repudiandae id? Deserunt assumenda quo ut amet officiis rerum animi! Quos eum, hic ducimus quis cumque maiores quo magni quaerat omnis delectus voluptatibus fugit repellat ab ipsam blanditiis doloremque ex est illum harum laboriosam. Voluptatibus, eius asperiores.</p>
@@ -26,6 +27,7 @@ get_header();
 
 <?php
 
+wp_footer();
 get_footer();
 
 ?>

@@ -3,28 +3,24 @@
     <div class="container">
         <div class="footer-top">
             <div class="social">
-                <a href="" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/images/facebook.png" alt="Katich - Katić Winery"></a>
-                <a href="" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/images/instagram.png" alt="Katich - Katić Winery"></a>
-                <a href="" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/images/youtube.png" alt="Katich - Katić Winery"></a>
-
+                <?php dynamic_sidebar('footer-1'); ?>
             </div>
-            <a href="" class="footer-logo"><img src="<?php bloginfo('template_directory'); ?>/images/logo-grey.svg" alt="Katich - Katić Winery"></a>
+
+
+            <a href="" class="footer-logo"><?php dynamic_sidebar('footer-2'); ?></a>
+
             <div class="cards">
-                <img src="<?php bloginfo('template_directory'); ?>/images/cards.jpg" alt="Katich - Katić Winery">
+                <?php dynamic_sidebar('footer-3'); ?>
+                <!-- <img src="<?php bloginfo('template_directory'); ?>/images/cards.jpg" alt="Katich - Katić Winery"> -->
             </div>
         </div>
 
         <div class="footer-bottom">
             <ul>
-                <?php wp_nav_menu(array(
-                    'theme_location' => 'primary-menu'
-                )) ?>
+                <?php dynamic_sidebar('footer-4'); ?>
             </ul>
             <div class="copyright">
-                <span>&copy; <?php echo date("Y"); ?> <strong>Katich Winery.</strong> Sva prava pridržana. </span> | <a href="">Politika obrade osobnih podataka</a> | <a href="">Opći uvjeti poslovanja</a>
-                <a title="Izrada web stranica" href="http://virtus-dizajn.com/izrada-web-stranica/" class="none">Izrada web stranica</a>
-                <a title="Web dizajn" href="https://virtus-dizajn.com/web-dizajn/" class="none">Web dizajn</a>
-                <a target="_blank" href="http://virtus-dizajn.com/" class="v text-r" title="Virtus Dizajn"><img alt="Virtus dizajn - internet rješenja" src="<?php bloginfo('template_directory'); ?>/images/virtus.svg" width="176" height="11"></a>
+                <?php dynamic_sidebar('footer-5'); ?>
             </div>
         </div>
     </div>
@@ -39,6 +35,12 @@
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
 <!--custom  js-->
 <script src="<?php bloginfo('template_directory'); ?>/js/functions.js"></script>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script> -->
 
 </body>
 
