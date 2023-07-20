@@ -13,36 +13,41 @@ if (!defined('ABSPATH')) {
 }
 ?>
 
-<?php
-global $post;
-if (is_user_logged_in()) { ?>
+<div class="sun">
 
-	<h1><?php the_title(); ?></h1>
-	<div class="my-account">
-		<h2>Welcome, <?php echo $current_user->display_name; ?></h2>
-		<p>Email: <?php echo $current_user->user_email; ?></p>
-	</div>
+	<?php
+	global $post;
+	if (is_user_logged_in()) { ?>
 
+		<h1><?php the_title(); ?></h1>
+		<div class="my-account">
+			<h2>Welcome, <?php echo $current_user->display_name; ?></h2>
+			<p>Email: <?php echo $current_user->user_email; ?></p>
+		</div>
 
-	<div class="woocommerce-MyAccount-content">
 		<?php
-		/**
-		 * My Account content.
-		 *
-		 * @since 2.6.0
-		 */
-		do_action('woocommerce_account_content');
+		do_action('woocommerce_account_navigation');
 		?>
-	</div>
+		<div class="woocommerce-MyAccount-content">
+			<?php
+			/**
+			 * My Account content.
+			 *
+			 * @since 2.6.0
+			 */
+			do_action('woocommerce_account_content');
+
+			?>
+		</div>
 
 
-<?php
-} else {
-
-	echo '<a href="http://localhost/wordpress/katich/login/">Login Here Please</a>';
-}
-?>
-
+	<?php
+	} else {
+		echo '<a href="http://localhost/wordpress/katich/login/">Login Here Please</a>';
+		// echo '<a href="">Login Here</a>';
+	}
+	?>
+</div>
 <div class="woocommerce-MyAccount-content">
 	<?php
 	/**

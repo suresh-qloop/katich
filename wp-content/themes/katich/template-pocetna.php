@@ -100,6 +100,7 @@ do_action('woocommerce_before_cart');
                 'post_status' => 'publish',
                 'orderby' => 'menu_order',
                 'order' => 'ASC',
+                'posts_per_page' => 5,
             ));
 
             while ($posts->have_posts()) : $posts->the_post();
@@ -116,18 +117,17 @@ do_action('woocommerce_before_cart');
                         <div class="product-bottom-wrapper">
                             <div class="product-quantity">
                                 <button class="q-minus">-</button>
-                                <input type="number" placeholder="1" min="0" value="0" class="input-text qty text">
+                                <input type="number" placeholder="1" min="1" value="1" class="input-text qty text">
+
                                 <?php
                                 // echo '<form class="cart" method="post" enctype="multipart/form-data" style="margin-top:;">';
                                 // echo '<div class="quantity">';
-                                // echo '<input type="number" step="01" min="1" name="quantity" value="1" class="input-text qty text1" />';
+                                // echo '<input type="number" step="01" min="1" name="quantity" value="1" class="input-text qty text" />';
                                 // echo '</div>';
-                                // echo '</form>';
+                                // echo '</form>'; 
                                 ?>
                                 <button class="q-plus">+</button>
-                                <!-- <span class="q-minus">-</span>
-                                <input type="number" placeholder="0">
-                                <span class="q-plus">+</span> -->
+                                
                             </div>
                             <?php
                             echo '<form class="cart" method="post" enctype="multipart/form-data" style="margin-top:;">';
@@ -143,7 +143,7 @@ do_action('woocommerce_before_cart');
             <?php endwhile; ?>
         </div>
         <div class="btn-wrapper">
-            <a href="" class="btn btn-secondary">Pogledajte ostatak ponude naših vina</a>
+            <a href="http://localhost/wordpress/katich/ponuda/" class="btn btn-secondary">Pogledajte ostatak ponude naših vina</a>
         </div>
     </div>
 </section>

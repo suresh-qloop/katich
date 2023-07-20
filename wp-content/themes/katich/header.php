@@ -27,7 +27,8 @@
     <!-- gallery css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css">
     <!-- <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/style.css"> -->
-    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/woocommerce/css/woocommerce-blocktheme-rtl.css">
+    <!-- <link rel="stylesheet" href="<? //php bloginfo('template_directory'); 
+                                        ?>/woocommerce/css/woocommerce-blocktheme-rtl.css"> -->
 
 </head>
 

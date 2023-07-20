@@ -140,3 +140,24 @@ $(document).ready(function () {
 		}
 	});
 });
+
+// JavaScript to handle the +/- buttons for product quantity
+// jQuery(document).ready(function ($) {
+//     $(document).on('click', '.q-minus', function () {
+//         var input = $(this).siblings('input.qty');
+//         var currentVal = parseInt(input.val());
+//         var minVal = parseInt(input.attr('min'));
+//         if (!isNaN(currentVal) && currentVal > minVal) {
+//             input.val(currentVal - 1).change();
+//         }
+//     });
+
+//     $(document).on('click', '.q-plus', function () {
+//         var input = $(this).siblings('input.qty');
+//         var currentVal = parseInt(input.val());
+//         var maxVal = parseInt(input.attr('max'));
+//         if (!isNaN(currentVal) && currentVal < maxVal) {
+//             input.val(currentVal + 1).change();
+//         }
+//     });
+// });

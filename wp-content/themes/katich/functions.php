@@ -189,3 +189,16 @@ function custom_account_menu_items($items)
     return $items;
 }
 add_filter('woocommerce_account_menu_items', 'custom_account_menu_items');
+
+
+// add_action(
+//     'woocommerce_before_quantity_input_field',
+//     function () {
+//         if (get_theme_mod('has_custom_quantity', 'yes') !== 'yes') {
+//             return;
+//         }
+
+//         echo '<span class="ct-increase"></span>';
+//         echo '<span class="ct-decrease"></span>';
+//     }
+// );

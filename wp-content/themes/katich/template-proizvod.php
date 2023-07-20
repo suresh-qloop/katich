@@ -5,6 +5,10 @@
 get_header();
 wp_head();
 
+defined('ABSPATH') || exit;
+
+do_action('woocommerce_before_cart');
+
 ?>
 
 
@@ -69,18 +73,15 @@ wp_head();
                         <div class="product-bottom-wrapper">
                             <div class="product-quantity">
                                 <button class="q-minus">-</button>
-                                <input type="number" placeholder="0" min="0" value="0" class="input-text qty text">
+                                <input type="number" placeholder="0" min="1" value="1">
                                 <?php
                                 // '<form class="cart" method="post" enctype="multipart/form-data" style="margin-top:;">';
                                 // '<div class="quantity">';
-                                // '<input type="number" step="01" min="1" name="quantity" value="1" class="input-text qty text3" />';
+                                // '<input type="number" step="01" min="1" name="quantity" value="1" class="input-text qty text" />';
                                 // '</div>';
                                 // '</form>';
                                 ?>
                                 <button class="q-plus">+</button>
-                                <!-- <span class="q-minus">-</span>
-                                <input type="number" placeholder="0">
-                                <span class="q-plus">+</span> -->
                             </div>
                             <?php
                             echo '<form class="cart" method="post" enctype="multipart/form-data" style="margin-top:;">';

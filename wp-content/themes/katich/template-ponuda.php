@@ -5,6 +5,10 @@
 get_header();
 wp_head();
 
+defined('ABSPATH') || exit;
+
+do_action('woocommerce_before_cart');
+
 ?>
 
 
@@ -42,19 +46,16 @@ wp_head();
                         <!-- <div class="product-price">10,00 €</div> -->
                         <div class="product-bottom-wrapper">
                             <div class="product-quantity">
-                                <button class="q-minus">-</button>
-                                <input type="number" placeholder="0" min="0" value="0" class="input-text qty text">
+                                <!-- <span class="q-minus">-</span> -->
+                                <!-- <input type="number" step="01" min="1" name="quantity" value="1" class="input-text qty text" /> -->
                                 <?php
-                                // echo '<form class="cart" method="post" enctype="multipart/form-data" style="margin-top:;">';
-                                // echo '<div class="quantity">';
-                                // echo '<input type="number" step="01" min="1" name="quantity" value="1" class="input-text qty text2" />';
-                                // echo '</div>';
-                                // echo '</form>';
+                                echo '<form class="cart" method="post" enctype="multipart/form-data" style="margin-top:;">';
+                                echo '<div class="quantity">';
+                                echo '<input type="number" step="01" min="1" name="quantity" value="1" class="input-text qty text" />';
+                                echo '</div>';
+                                echo '</form>';
                                 ?>
-                                <button class="q-plus">+</button>
-                                <!-- <span class="q-minus">-</span>
-                                <input type="number" placeholder="0">
-                                <span class="q-plus">+</span> -->
+                                <!-- <span class="q-plus">+</span> -->
                             </div>
                             <?php
                             echo '<form class="cart" method="post" enctype="multipart/form-data" style="margin-top:;">';

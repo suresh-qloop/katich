@@ -29,17 +29,17 @@ do_action('woocommerce_before_cart'); ?>
 <div class="container">
     <h1><?php the_title(); ?></h1>
     <div class="row">
-        <div class="col-sm-8 cart-product">
+        <div class="col-12 cart-product">
             <form class="woocommerce-cart-form" action="<?php echo esc_url(wc_get_cart_url()); ?>" method="post">
                 <?php do_action('woocommerce_before_cart_table'); ?>
 
-                <table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
+                <table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents shop-table" cellspacing="0">
                     <thead>
                         <tr>
-                            <th class="product-thumbnail"><?php esc_html_e('Thumbnail image', 'woocommerce'); ?></th> <!--<span class="screen-reader-text"> -->
+                            <th class="product-thumbnail table-hr"><?php esc_html_e('Thumbnail image', 'woocommerce'); ?></th> <!--<span class="screen-reader-text"> -->
                             <th class="product-name"><?php esc_html_e('Product', 'woocommerce'); ?></th>
                             <th class="product-price"><?php esc_html_e('Price', 'woocommerce'); ?></th>
-                            <th class="product-quantity"><?php esc_html_e('Quantity', 'woocommerce'); ?></th>
+                            <th class="product-quantity pro-quantity"><?php esc_html_e('Quantity', 'woocommerce'); ?></th>
                             <th class="product-subtotal"><?php esc_html_e('Subtotal', 'woocommerce'); ?></th>
                             <th class="product-remove"><?php esc_html_e('Remove item', 'woocommerce'); ?></th>
 
@@ -111,7 +111,8 @@ do_action('woocommerce_before_cart'); ?>
                                         ?>
                                     </td>
 
-                                    <td class="product-quantity" data-title="<?php esc_attr_e('Quantity', 'woocommerce'); ?>">
+                                    <td class="product-quantity pro-quantity" data-title="<?php esc_attr_e('Quantity', 'woocommerce');
+                                                                                            ?>">
                                         <?php
                                         if ($_product->is_sold_individually()) {
                                             $min_quantity = 1;
@@ -120,22 +121,28 @@ do_action('woocommerce_before_cart'); ?>
                                             $min_quantity = 0;
                                             $max_quantity = $_product->get_max_purchase_quantity();
                                         }
-
+                                        
                                         $product_quantity = woocommerce_quantity_input(
-                                            // array(
-                                            //     'input_name'   => "cart[{$cart_item_key}][qty]",
-                                            //     'input_value'  => $cart_item['quantity'],
-                                            //     'max_value'    => $max_quantity,
-                                            //     'min_value'    => $min_quantity,
-                                            //     'product_name' => $product_name,
-                                            // ),
+                                            array(
+                                                'input_name'   => "cart[{$cart_item_key}][qty]",
+                                                'input_value'  => $cart_item['quantity'],
+                                                'max_value'    => $max_quantity,
+                                                'min_value'    => $min_quantity,
+                                                'product_name' => $product_name,
+                                            ),
                                             $_product,
                                             false
                                         );
 
+
+                                        // echo '<button class="q-minus">-</button>';
                                         echo apply_filters('woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item); // PHPCS: XSS ok.
+                                        // echo '<button class="q-plus">+</button>';
+
                                         ?>
+
                                     </td>
+
 
                                     <td class="product-subtotal" data-title="<?php esc_attr_e('Subtotal', 'woocommerce'); ?>">
                                         <?php
@@ -166,12 +173,13 @@ do_action('woocommerce_before_cart'); ?>
                         }
                         ?>
 
-                        <?php do_action('woocommerce_cart_contents'); ?>
+                        <?php do_action('woocommerce_cart_contents');
+                        ?>
 
                         <tr>
                             <td colspan="6" class="actions">
 
-                                <?php if (wc_coupons_enabled()) { ?>
+                                <!-- <?php if (wc_coupons_enabled()) { ?>
                                     <div class="coupon">
                                         <label for="coupon_code" class="screen-reader-text"><?php esc_html_e('Coupon:', 'woocommerce'); ?></label>
                                         <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e('Coupon code', 'woocommerce'); ?>" />
@@ -186,7 +194,7 @@ do_action('woocommerce_before_cart'); ?>
 
                                     <?php do_action('woocommerce_cart_actions'); ?>
 
-                                    <?php wp_nonce_field('woocommerce-cart', 'woocommerce-cart-nonce'); ?>
+                                    <?php wp_nonce_field('woocommerce-cart', 'woocommerce-cart-nonce'); ?> -->
                             </td>
                         </tr>
 
@@ -194,12 +202,26 @@ do_action('woocommerce_before_cart'); ?>
                     </tbody>
                 </table>
                 <?php do_action('woocommerce_after_cart_table'); ?>
+                <div class="cart-actions-left">
+                    <?php if (wc_coupons_enabled()) { ?>
+                        <div class="coupon">
+                            <label for="coupon_code" class="screen-reader-text"><?php esc_html_e('Coupon:', 'woocommerce'); ?></label>
+                            <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e('Coupon code', 'woocommerce'); ?>" />
+                            <button type="submit" class="apply button<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>" name="apply_coupon" value="<?php esc_attr_e('Apply coupon', 'woocommerce'); ?>"><?php esc_html_e('Apply coupon', 'woocommerce'); ?>
+                            </button>
+                            <?php do_action('woocommerce_cart_coupon'); ?>
+                        <?php } ?>
+                        <button type="submit" class="update button<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>" name="update_cart" value="<?php esc_attr_e('Update cart', 'woocommerce'); ?>"><?php esc_html_e('Update cart', 'woocommerce'); ?></button>
+                        </div>
+                        <?php do_action('woocommerce_cart_actions'); ?>
+                        <?php wp_nonce_field('woocommerce-cart', 'woocommerce-cart-nonce'); ?>
+                </div>
             </form>
         </div>
 
         <?php do_action('woocommerce_before_cart_collaterals'); ?>
 
-        <div class="cart-collaterals col-sm-4">
+        <div class="cart-actions-right">
             <?php
             /**
              * Cart collaterals hook.
