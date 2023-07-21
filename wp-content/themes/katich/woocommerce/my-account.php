@@ -53,7 +53,7 @@ if (!defined('ABSPATH')) {
 
 				<?php endif; ?>
 
-				<h2><?php the_title(); ?></h2>
+				<h2>Login</h2>
 
 
 				<form action="<?php echo wc_get_account_endpoint_url(''); ?>" class="woocommerce-form woocommerce-form-login login" method="post">
@@ -73,15 +73,12 @@ if (!defined('ABSPATH')) {
 					<?php do_action('woocommerce_login_form'); ?>
 
 					<p class="form-row">
-						<!-- <label class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme">
-				<input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever" /> <span><?php esc_html_e('Remember me', 'woocommerce'); ?></span>
-			</label> -->
 						<?php wp_nonce_field('woocommerce-login', 'woocommerce-login-nonce'); ?>
 						<button type="submit" class="woocommerce-button button woocommerce-form-login__submit<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>" name="login" value="<?php esc_attr_e('Log in', 'woocommerce'); ?>"><?php esc_html_e('Log in', 'woocommerce'); ?></button>
 					</p>
-					<p class="woocommerce-LostPassword lost_password">
+					<!-- <p class="woocommerce-LostPassword lost_password">
 						<a href="<?php echo esc_url(wp_lostpassword_url()); ?>"><?php esc_html_e('Lost your password?', 'woocommerce'); ?></a>
-					</p>
+					</p> -->
 
 					<?php do_action('woocommerce_login_form_end'); ?>
 
@@ -96,16 +93,6 @@ if (!defined('ABSPATH')) {
 		<?php endif; ?>
 	<?php
 	}
-	?>
-</div>
-<div class="woocommerce-MyAccount-content">
-	<?php
-	/**
-	 * My Account content.
-	 *
-	 * @since 2.6.0
-	 */
-	// do_action('woocommerce_account_content');
 	?>
 </div>
 

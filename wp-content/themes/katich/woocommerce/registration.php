@@ -1,4 +1,3 @@
-
 <?php
 // Template Name:registration
 
@@ -51,10 +50,27 @@ get_header();
             </div>
         <?php endif; ?>
         <form method="post">
-            <input type="text" name="username" placeholder="Username" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <input type="password" name="confirmpassword" placeholder="Confirm Password" required>
+            <p>
+                <label for="username"><?php esc_html_e('Username', 'woocommerce'); ?>&nbsp;<span class="required">*</span></label>
+                <input type="text" name="username" placeholder="Username" required>
+            </p>
+
+            <p>
+                <label for="email"><?php esc_html_e('Email Address', 'woocommerce'); ?>&nbsp;<span class="required">*</span></label>
+                <input type="email" name="email" placeholder="Email" required>
+            </p>
+
+            <p>
+                <label for="password"><?php esc_html_e('Password', 'woocommerce'); ?>&nbsp;<span class="required">*</span></label>
+                <input type="password" name="password" placeholder="Password" required>
+            </p>
+
+            <p>
+                <label for="password"><?php esc_html_e('Confirm Password', 'woocommerce'); ?>&nbsp;<span class="required">*</span></label>
+                <input type="password" name="confirmpassword" placeholder="Confirm Password" required>
+            </p>
+
+
             <input type="submit" name="register_submit" value="Register">
         </form>
         <br>
