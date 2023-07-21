@@ -279,6 +279,7 @@ main {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 0 2rem;
+
 }
 .container-lg {
   max-width: 192rem;
@@ -1347,6 +1348,10 @@ footer ul li a:hover {
 }
 
 /* Style the cart totals table */
+.cart-page{
+  margin-top: 5rem;
+}
+
 .cart_totals {
   margin: 20px;
   justify-content: center;

@@ -26,7 +26,7 @@ defined('ABSPATH') || exit;
 
 do_action('woocommerce_before_cart'); ?>
 
-<div class="container">
+<div class="container cart-page">
     <h1><?php the_title(); ?></h1>
     <div class="row">
         <div class="col-12 cart-product">
