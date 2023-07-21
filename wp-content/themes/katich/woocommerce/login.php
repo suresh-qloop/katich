@@ -17,6 +17,7 @@ get_header();
         <?php endif; ?>
 
         <h2><?php the_title(); ?></h2>
+    
 
         <form action="<?php echo wc_get_account_endpoint_url(''); ?>" class="woocommerce-form woocommerce-form-login login" method="post">
 
@@ -48,18 +49,11 @@ get_header();
             <?php do_action('woocommerce_login_form_end'); ?>
 
         </form>
+        <h4>Don't have an account? <a href="<?php esc_attr_e('Registracija', 'woocommerce'); ?>">Registracija</a></h4>
 
         <?php if ('yes' === get_option('woocommerce_enable_myaccount_registration')) : ?>
 
         </div>
-
-        <!-- <div class="u-column2 col-2">
-
-            <h2><?php esc_html_e('Register', 'woocommerce'); ?></h2>
-
-            
-
-        </div> -->
 
     </div>
 <?php endif; ?>

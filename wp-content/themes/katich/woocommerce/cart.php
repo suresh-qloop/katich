@@ -111,8 +111,7 @@ do_action('woocommerce_before_cart'); ?>
                                         ?>
                                     </td>
 
-                                    <td class="product-quantity pro-quantity" data-title="<?php esc_attr_e('Quantity', 'woocommerce');
-                                                                                            ?>">
+                                    <td class="product-quantity pro-quantity" data-title="<?php esc_attr_e('Quantity', 'woocommerce'); ?>">
                                         <?php
                                         if ($_product->is_sold_individually()) {
                                             $min_quantity = 1;
@@ -121,7 +120,7 @@ do_action('woocommerce_before_cart'); ?>
                                             $min_quantity = 0;
                                             $max_quantity = $_product->get_max_purchase_quantity();
                                         }
-                                        
+
                                         $product_quantity = woocommerce_quantity_input(
                                             array(
                                                 'input_name'   => "cart[{$cart_item_key}][qty]",
@@ -133,12 +132,7 @@ do_action('woocommerce_before_cart'); ?>
                                             $_product,
                                             false
                                         );
-
-
-                                        // echo '<button class="q-minus">-</button>';
-                                        echo apply_filters('woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item); // PHPCS: XSS ok.
-                                        // echo '<button class="q-plus">+</button>';
-
+                                        echo apply_filters('woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item); // PHPCS: XSS ok. 
                                         ?>
 
                                     </td>

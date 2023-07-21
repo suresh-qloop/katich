@@ -584,13 +584,28 @@ header nav li.current_page_item a {
   display: inline-block;
   font-size: 1.5rem;
 }
+.header-top a img {
+  width: 40px;
+  margin-left: 15px;
+}
 .header-top a:first-child {
   margin-right: 1rem;
 }
 .header-top a:first-child::after {
-  content: "/";
+  /* content: "/";
   display: inline-block;
-  margin-left: 1rem;
+  margin-left: 1rem; */
+}
+
+.my-login-link {
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.header-right {
+  display: flex;
 }
 .lang a {
   margin: 0;
@@ -874,8 +889,8 @@ header nav li.current_page_item a {
   font-size: 2.5rem;
 }
 .product-price {
-  font-size: 2.5rem;
-  color: #a60e18;
+  /* font-size: 2.5rem; */
+  /* color: #a60e18; */
 }
 .product-bottom-wrapper {
   display: flex;
@@ -917,6 +932,7 @@ header nav li.current_page_item a {
   text-align: center;
   font-family: "Arial", sans-serif;
   margin: 0 1rem;
+  margin-left: 70px;
   /* margin-top: 25px; */
 }
 input::-webkit-outer-spin-button,

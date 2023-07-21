@@ -20,7 +20,7 @@ do_action('woocommerce_before_cart');
     <div class="container">
         <div class="single-wrapper">
             <article class="single-image">
-                <a href="<?php bloginfo('template_directory'); ?>/images/product1.jpg" data-fancybox="gallery"><img src="<?php bloginfo('template_directory'); ?>/images/product1.jpg" alt="Katich - Katić Winery"></a>
+                <!-- <a href="<?php bloginfo('template_directory'); ?>/images/product1.jpg" data-fancybox="gallery"><img src="<?php bloginfo('template_directory'); ?>/images/product1.jpg" alt="Katich - Katić Winery"></a> -->
                 <a href="<?php bloginfo('template_directory'); ?>/images/product2.jpg" data-fancybox="gallery"><img src="<?php bloginfo('template_directory'); ?>/images/product2.jpg" alt="Katich - Katić Winery"></a>
                 <a href="<?php bloginfo('template_directory'); ?>/images/product3.jpg" data-fancybox="gallery"><img src="<?php bloginfo('template_directory'); ?>/images/product3.jpg" alt="Katich - Katić Winery"></a>
             </article>
@@ -32,11 +32,13 @@ do_action('woocommerce_before_cart');
                     <div class="product-price">10,00 €</div>
                     <div class="product-bottom-wrapper">
                         <div class="product-quantity">
-                            <span class="q-minus">-</span>
-                            <input type="number" placeholder="0">
-                            <span class="q-plus">+</span>
+                            <form class="cart" method="post" enctype="multipart/form-data">
+                                <div class="quantity">
+                                    <input type="number" step="1" min="1" name="quantity" value="1" class="input-text qty text" />
+                                </div>
                         </div>
-                        <a href="page-proizvod.php" class="btn btn-primary btn-cart">Dodajte u košaricu</a>
+                            <button type="submit" name="add-to-cart" value="<?php echo esc_attr(get_the_ID()); ?>" class="button alt btn btn-primary btn-cart">Dodajte u košaricu</button>
+                        </form>
                     </div>
                 </div>
             </aricle>
@@ -63,9 +65,11 @@ do_action('woocommerce_before_cart');
             ?>
 
                 <article>
-                    <a href="page-proizvod.php" class="product-image"><img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="Katich - Katić Winery"></a>
+                    <a href="<?php echo esc_url(get_permalink()); ?>" class="product-image">
+                        <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="Katich - Katić Winery">
+                    </a>
                     <div class="product-text">
-                        <h3><a href="page-proizvod.php"><?php the_title(); ?></a></h3>
+                        <h3><a href="<?php echo esc_url(get_permalink()); ?>"><?php the_title(); ?></a></h3>
                         <h4>0,75l</h4>
                         <p><?php the_content(); ?></p>
                         <?php echo '<div class="product-price">' . $product->get_price_html() . '</div>'; ?>

@@ -47,20 +47,22 @@
                 </ul>
             </nav>
             <div class="header-right">
-                <article class="header-top">
-                    <a href="<?php esc_attr_e('Login', 'woocommerce'); ?>">Prijava</a>
-                    <a href="<?php esc_attr_e('Registracija', 'woocommerce'); ?>">Registracija</a>
-                    <div class="lang">
-                        <a href="<?php echo wc_get_account_endpoint_url(''); ?>"><img src="<?php bloginfo('template_directory'); ?>/images/user.png" alt="Katich - Katić Winery"></a>
-                    </div>
-
-                </article>
                 <article class="header-bottom">
                     <a href="<?php echo wc_get_cart_url(); ?>" class="header-cart">
                         <img src="<?php bloginfo('template_directory'); ?>/images/cart.svg" alt="Katich - Katić Winery">
                         <span>Moja košarica</span>
                         <span class="cart-quantity">(<?php echo WC()->cart->get_cart_contents_count(); ?>)</span>
                     </a>
+                </article>
+                <!-- <div style="font-size:xx-large; margin: -10px -12px 0 10px">/</div> -->
+                <article class="header-top">
+                    <?php if (is_user_logged_in()) { ?>
+                        <a href="<?php echo wc_get_account_endpoint_url(''); ?>"><img src="<?php bloginfo('template_directory'); ?>/images/user.png" alt="Katich - Katić Winery"></a>
+                    <?php } else { ?>
+                        <a href="<?php echo wc_get_account_endpoint_url(''); ?>" class="my-login-link">Login</a>
+                        <!-- <a href="<? //php esc_attr_e('Registracija', 'woocommerce'); 
+                                        ?>">Registracija</a> -->
+                    <?php } ?>
                 </article>
             </div>
         </div>

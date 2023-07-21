@@ -2,7 +2,7 @@
 
 wp_head();
 get_header();
-the_post();
+
 
 ?>
 
