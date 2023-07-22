@@ -49,8 +49,10 @@ do_action('woocommerce_before_cart');
                             <div class="product-quantity">
                                 <form class="cart" method="post" enctype="multipart/form-data">
                                     <div class="quantity">
-                                        <button></button>
-                                        <input type="number" step="1" min="1" name="quantity" value="1" class="input-text qty text" />
+                                        <label class="screen-reader-text" for="smntcswcb">Quantity</label>
+                                        <input class="minus button wp-element-button" type="button" value="-">
+                                        <input type="number" id="smntcswcb" step="1" min="1" name="quantity" value="1" class="input-text qty text" />
+                                        <input class="plus button wp-element-button" type="button" value="+">
                                     </div>
                             </div>
                             <button type="submit" name="add-to-cart" value="<?php echo esc_attr(get_the_ID()); ?>" class="button alt btn btn-primary btn-cart">Dodajte u košaricu</button>

@@ -904,25 +904,7 @@ header nav li.current_page_item a {
   align-items: center;
   margin-right: 3rem;
 }
-.q-minus,
-.q-plus {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #818383;
-  width: 4.5rem;
-  height: 4.5rem;
-  border-radius: 50%;
-  color: #fff;
-  font-size: 1.7rem;
-  font-family: "Arial", sans-serif;
-  transition: all 0.4s ease-in-out;
-  cursor: pointer;
-}
-.q-minus:hover,
-.q-plus:hover {
-  background-color: #a60e18;
-}
+
 .product-quantity input {
   width: 4.5rem;
   height: 4.5rem;
@@ -933,7 +915,7 @@ header nav li.current_page_item a {
   text-align: center;
   font-family: "Arial", sans-serif;
   margin: 0 1rem;
-  margin-left: 70px;
+  /* margin-left: 70px; */
   /* margin-top: 25px; */
 }
 input::-webkit-outer-spin-button,
@@ -1323,7 +1305,7 @@ footer ul li a:hover {
   padding: 18px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  flex-grow: 1;
+  /* flex-grow: 1; */
   margin-right: 10px;
 }
 
@@ -1665,4 +1647,17 @@ footer ul li a:hover {
 .pro-quantity {
   display: revert;
   align-items: center !important;
+}
+
+.quantity{
+  display: flex;
+  justify-content: center;
+}
+
+.wp-element-button{
+	background-color:grey !important;
+}
+
+.wp-element-button:hover{
+	background-color:#a60e18 !important;
 }
