@@ -19,7 +19,7 @@ do_action('woocommerce_before_cart');
 <section class="pages space">
 	<div class="container">
 		<div class="title title-center mb-6">
-			<h1><?php the_title(); ?></h1>
+			<h1>Ponuda</h1>
 		</div>
 		<div class="products-wrapper">
 
