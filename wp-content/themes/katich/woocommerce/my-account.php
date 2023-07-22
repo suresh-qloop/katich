@@ -47,9 +47,9 @@ if (!defined('ABSPATH')) {
 		<!-- <a href="<?php esc_attr_e('Login', 'woocommerce'); ?>">Login Here</a> -->
 		<?php if ('yes' === get_option('woocommerce_enable_myaccount_registration')) : ?>
 
-			<div class="u-columns col2-set" id="customer_login">
+			<!-- <div class="u-columns col2-set" id="customer_login"> -->
 
-				<div class="u-column1 col-1">
+				<!-- <div class="u-column1 col-1"> -->
 
 				<?php endif; ?>
 
@@ -87,9 +87,9 @@ if (!defined('ABSPATH')) {
 
 				<?php if ('yes' === get_option('woocommerce_enable_myaccount_registration')) : ?>
 
-				</div>
+				<!-- </div> -->
 
-			</div>
+			<!-- </div> -->
 		<?php endif; ?>
 	<?php
 	}

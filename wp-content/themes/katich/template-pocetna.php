@@ -135,7 +135,7 @@ do_action('woocommerce_before_cart');
             <?php endwhile; ?>
         </div>
         <div class="btn-wrapper">
-            <a href="http://localhost/wordpress/katich/ponuda/" class="btn btn-secondary">Pogledajte ostatak ponude naših vina</a>
+            <a href="<?php echo esc_url(get_permalink(get_page_by_path('ponuda'))); ?>" class="btn btn-secondary">Pogledajte ostatak ponude naših vina</a>
         </div>
     </div>
 </section>
