@@ -45,16 +45,13 @@ if (!defined('ABSPATH')) {
 	} else {
 	?>
 		<!-- <a href="<?php esc_attr_e('Login', 'woocommerce'); ?>">Login Here</a> -->
-		<?php if ('yes' === get_option('woocommerce_enable_myaccount_registration')) : ?>
+		<?php ('yes' === get_option('woocommerce_enable_myaccount_registration')) ?>
 
-			<div class="u-columns col2-set" id="customer_login">
+		<div class="login-form u-columns col2-set" id="customer_login">
 
-				<div class="u-column1 col-1">
-
-				<?php endif; ?>
+			<div class="u-column1 col-1">
 
 				<h2>Login</h2>
-
 
 				<form action="<?php echo wc_get_account_endpoint_url(''); ?>" class="woocommerce-form woocommerce-form-login login" method="post">
 
@@ -87,13 +84,13 @@ if (!defined('ABSPATH')) {
 
 				<?php if ('yes' === get_option('woocommerce_enable_myaccount_registration')) : ?>
 
-				</div>
-
 			</div>
-		<?php endif; ?>
-	<?php
+
+		</div>
+	<?php endif; ?>
+<?php
 	}
-	?>
+?>
 </div>
 
 <?php
