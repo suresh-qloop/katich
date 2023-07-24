@@ -27,7 +27,7 @@ defined('ABSPATH') || exit;
 do_action('woocommerce_before_cart'); ?>
 
 <div class="container cart-page">
-    <h1><?php the_title(); ?></h1>
+    <h1 style="text-align: center"><?php the_title(); ?></h1>
     <div class="row">
         <div class="col-12 cart-product">
             <form class="woocommerce-cart-form" action="<?php echo esc_url(wc_get_cart_url()); ?>" method="post">
@@ -182,7 +182,7 @@ do_action('woocommerce_before_cart'); ?>
                                         <?php do_action('woocommerce_cart_coupon'); ?>
                                     <?php } ?>
 
-                                    <button type="submit" class="update button<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>" name="update_cart" value="<?php esc_attr_e('Update cart', 'woocommerce'); ?>"><?php esc_html_e('Update cart', 'woocommerce'); ?></button>
+                                    <button type="submit" id="updateButton" class="update button<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>" name="update_cart" value="<?php esc_attr_e('Update cart', 'woocommerce'); ?>"><?php esc_html_e('Update cart', 'woocommerce'); ?></button>
                                     </div>
 
 

@@ -123,3 +123,15 @@ jQuery(document).ready(function ($) {
 		$(this).trigger('woocommerce_added_to_cart');
 	});
 });
+
+
+// Wait for the document to be fully loaded before attaching the event listener
+document.addEventListener("DOMContentLoaded", function () {
+	// Get a reference to the button element
+	const updateButton = document.getElementById("updateButton");
+	// Add a click event listener to the button
+	updateButton.addEventListener("click", function () {
+		// Reload/refresh the page when the button is clicked
+		window.location.reload();
+	});
+});

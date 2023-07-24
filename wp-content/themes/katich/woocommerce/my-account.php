@@ -19,7 +19,7 @@ if (!defined('ABSPATH')) {
 	global $post;
 	if (is_user_logged_in()) { ?>
 
-		<h1><?php the_title(); ?></h1>
+		<h1 style="text-align: center"><?php the_title(); ?></h1>
 		<!-- <div class="my-account">
 			<h2>Welcome, <?php echo $current_user->display_name; ?></h2>
 			<p>Email: <?php echo $current_user->user_email; ?></p>

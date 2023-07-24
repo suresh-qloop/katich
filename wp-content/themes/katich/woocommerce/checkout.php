@@ -24,6 +24,13 @@ get_header();
 if (!defined('ABSPATH')) {
 	exit;
 }
+
+?>
+
+<h1 style="text-align: center"><?php the_title(); ?></h1>
+
+<?php
+
 $checkout = WC()->checkout();
 
 do_action('woocommerce_before_checkout_form', $checkout);
