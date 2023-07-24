@@ -56,7 +56,7 @@ do_action('woocommerce_before_cart');
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio eum repudiandae laborum id dolor. Laborum iste labore voluptas quos recusandae incidunt exercitationem, at non odit, dolore quidem vel similique quibusdam inventore. Hic necessitatibus rem ullam voluptate at eos vitae optio amet non repellendus? Accusamus accusantium minus aliquid? Velit, ex nemo.</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi laborum optio ea eaque quam veniam saepe accusamus, a exercitationem error aliquam, nesciunt repellendus asperiores voluptates veritatis molestias harum nobis ipsum.</p>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia, quo?</p>
-            <a href="" class="btn btn-primary">Pročitajte više</a>
+            <a href="<?php echo esc_url(get_permalink(get_page_by_path('o-nama'))); ?>" class="btn btn-primary">Pročitajte više</a>
         </article>
         <article class="about-map">
             <div class="title">
