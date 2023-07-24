@@ -1349,6 +1349,15 @@ footer ul li a:hover {
   text-decoration: none;
 }
 
+.order-button{
+  padding: 10px 20px;
+  margin-top: 10px;
+  font-size: medium;
+  background: #333;
+  color: white;
+  text-decoration: none;
+}
+
 /* Style the cart totals table */
 .cart-page {
   margin-top: 5rem;
