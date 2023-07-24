@@ -1332,6 +1332,10 @@ footer ul li a:hover {
   cursor: pointer;
 }
 
+.add-cart{
+  width: 45%;
+}
+
 .save-button {
   display: inline-block;
   padding: 10px 20px;

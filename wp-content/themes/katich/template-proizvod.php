@@ -27,7 +27,7 @@ do_action('woocommerce_before_cart');
             <aricle class="single-text">
                 <div class="title">
                     <h1>Kujundžuša (vrhunsko vino)</h1>
-                    <h4>0,75l</h4>
+                    <?php echo '<h4>' . $product->get_attribute('quantity') . '</h4>'; ?>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     <div class="product-price">10,00 €</div>
                     <div class="product-bottom-wrapper">
@@ -40,7 +40,7 @@ do_action('woocommerce_before_cart');
                                     <input class="plus button wp-element-button" type="button" value="+">
                                 </div>
                         </div>
-                        <button type="submit" name="add-to-cart" value="<?php echo esc_attr(get_the_ID()); ?>" class="button alt btn btn-primary btn-cart">Dodajte u košaricu</button>
+                        <button type="submit" name="add-to-cart" value="<?php echo esc_attr(get_the_ID()); ?>" class="add-cart button alt btn btn-primary btn-cart">Dodajte u košaricu</button>
                         </form>
                     </div>
                 </div>

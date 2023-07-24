@@ -25,7 +25,11 @@ do_action('woocommerce_before_cart');
 			<aricle class="single-text">
 				<div class="title">
 					<h1><?php the_title(); ?></h1>
-					<h4>0,75l</h4>
+					<?php
+					$product = wc_get_product($post);
+					echo '<h4>' . $product->get_attribute('quantity') . '</h4>';
+					?>
+					<!-- <h4>0,75l</h4> -->
 					<p><?php the_content(); ?></p>
 					<?php
 					// Check if the global $post variable is available and represents a product post
@@ -46,7 +50,7 @@ do_action('woocommerce_before_cart');
 									<input class="plus button wp-element-button" type="button" value="+">
 								</div>
 						</div>
-						<button type="submit" name="add-to-cart" value="<?php echo esc_attr(get_the_ID()); ?>" class="button alt btn btn-primary btn-cart">Dodajte u košaricu</button>
+						<button type="submit" name="add-to-cart" value="<?php echo esc_attr(get_the_ID()); ?>" class="add-cart button alt btn btn-primary btn-cart">Dodajte u košaricu</button>
 						</form>
 					</div>
 				</div>
@@ -77,7 +81,7 @@ do_action('woocommerce_before_cart');
 					<a href="<?php echo esc_url(get_permalink()); ?>" class="product-image"><img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="Katich - Katić Winery"></a>
 					<div class="product-text">
 						<h3><a href="<?php echo esc_url(get_permalink()); ?>"><?php the_title(); ?></a></h3>
-						<h4>0,75l</h4>
+						<?php echo '<h4>' . $product->get_attribute('quantity') . '</h4>'; ?>
 						<p><?php the_content(); ?></p>
 						<?php echo '<div class="product-price">' . $product->get_price_html() . '</div>'; ?>
 						<!-- <div class="product-price">10,00 €</div> -->

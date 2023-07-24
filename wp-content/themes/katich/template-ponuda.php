@@ -41,7 +41,7 @@ do_action('woocommerce_before_cart');
                         <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="Katich - Katić Winery"></a>
                     <div class="product-text">
                         <h3><a href="<?php echo esc_url(get_permalink()); ?>"><?php the_title(); ?></a></h3>
-                        <h4>0,75l</h4>
+                        <?php echo '<h4>' . $product->get_attribute('quantity') . '</h4>'; ?>
                         <p><?php the_content(); ?></p>
                         <?php echo '<div class="product-price">' . $product->get_price_html() . '</div>'; ?>
                         <!-- <div class="product-price">10,00 €</div> -->
