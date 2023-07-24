@@ -24,10 +24,14 @@ get_header();
 
 defined('ABSPATH') || exit;
 
-do_action('woocommerce_before_cart'); ?>
+?>
+
+<h1 style="text-align: center"><?php the_title(); ?></h1>
+
+<?php do_action('woocommerce_before_cart'); ?>
 
 <div class="container cart-page">
-    <h1 style="text-align: center"><?php the_title(); ?></h1>
+
     <div class="row">
         <div class="col-12 cart-product">
             <form class="woocommerce-cart-form" action="<?php echo esc_url(wc_get_cart_url()); ?>" method="post">
