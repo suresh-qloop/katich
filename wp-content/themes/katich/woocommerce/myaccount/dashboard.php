@@ -28,6 +28,7 @@ $allowed_html = array(
 );
 ?>
 
+<h2>DashBoard</h2>
 <p>
 	<?php
 	printf(

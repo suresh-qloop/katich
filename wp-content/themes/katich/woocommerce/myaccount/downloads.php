@@ -17,6 +17,8 @@
  * @version 7.8.0
  */
 
+use ParagonIE\Sodium\Core\Curve25519\H;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -25,6 +27,8 @@ $downloads     = WC()->customer->get_downloadable_products();
 $has_downloads = (bool) $downloads;
 
 do_action( 'woocommerce_before_account_downloads', $has_downloads ); ?>
+
+<h2>Downloads</h2>
 
 <?php if ( $has_downloads ) : ?>
 
@@ -39,7 +43,7 @@ do_action( 'woocommerce_before_account_downloads', $has_downloads ); ?>
 	<?php
 
 	$wp_button_class = wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '';
-	wc_print_notice( esc_html__( 'No downloads available yet.', 'woocommerce' ) . ' <a class="button wc-forward' . esc_attr( $wp_button_class ) . '" href="' . esc_url( apply_filters( 'woocommerce_return_to_shop_redirect', wc_get_page_permalink( 'shop' ) ) ) . '">' . esc_html__( 'Browse products', 'woocommerce' ) . '</a>', 'notice' ); // phpcs:ignore WooCommerce.Commenting.CommentHooks.MissingHookComment 
+	wc_print_notice( esc_html__( 'No downloads available yet.', 'woocommerce' ) . ' <a class="button wc-forward' . esc_attr( $wp_button_class ) . '" href="' . esc_url( apply_filters( 'woocommerce_return_to_shop_redirect', esc_url(get_permalink(get_page_by_path('ponuda'))) ) ) . '">' . esc_html__( 'Browse products', 'woocommerce' ) . '</a>', 'notice' ); // phpcs:ignore WooCommerce.Commenting.CommentHooks.MissingHookComment 
 	?>
 
 <?php endif; ?>

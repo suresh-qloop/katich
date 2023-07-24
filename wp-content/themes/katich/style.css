@@ -526,12 +526,13 @@ header {
   width: 100%;
   background-color: #fff;
   /* z-index: 10; */
-  padding: 2rem 0;
   transition: all 0.4s ease-in-out;
+  padding: 15px;
 }
-header.scrolled {
-  padding: 1rem 0;
-}
+/* header.scrolled {
+  padding: 15px;
+} */
+
 header .container {
   display: flex;
   align-items: center;
@@ -1266,8 +1267,8 @@ footer ul li a:hover {
 .shop_table td {
   padding: 15px;
   text-align: center;
-  border-right: 1px solid lightgrey;
-  border-bottom: 1px solid lightgrey;
+  border: 1px solid lightgrey;
+  /* border-bottom: 1px solid lightgrey; */
 }
 
 .remove {
@@ -1331,13 +1332,20 @@ footer ul li a:hover {
   cursor: pointer;
 }
 
-.order {
+.save-button {
   display: inline-block;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  width: 15%;
+}
+
+.order {
   padding: 10px 20px;
   margin-top: 10px;
   font-size: medium;
-  background-color: #333;
-  color: #fff;
+  color: #000000;
   text-decoration: none;
 }
 
@@ -1420,18 +1428,24 @@ footer ul li a:hover {
 /* Styling for the WooCommerce account navigation */
 .woocommerce-MyAccount-navigation {
   margin-bottom: 20px;
+  flex: 0 0 auto;
+  width: 20%;
 }
 
 /* Styling for the WooCommerce account navigation links */
 .woocommerce-MyAccount-navigation ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  margin-right: 20px;
 }
 
 .woocommerce-MyAccount-navigation ul li {
-  display: inline-block;
-  margin-right: 10px;
+  border: 1px solid #eeeeee;
+  color: #333333;
+  font-weight: 700;
+  font-size: medium;
+  display: block;
+  padding: 15px 15px 13px;
+  text-transform: uppercase;
+  text-align: left;
 }
 
 .woocommerce-MyAccount-navigation ul li a {
@@ -1440,14 +1454,21 @@ footer ul li a:hover {
 }
 
 .woocommerce-MyAccount-navigation ul li a:hover {
-  text-decoration: underline;
+  /* text-decoration: underline; */
+}
+
+.woo-myaccount {
+  display: flex;
+  padding: 30px;
+  justify-content: center;
 }
 
 /* Styling for the WooCommerce account content */
 .woocommerce-MyAccount-content {
   background-color: #fff;
-  padding: 20px;
-  border: 1px solid #ccc;
+  padding: 30px 30px 30px 30px;
+  border: 1px solid #eeeeee;
+  width: 60%;
 }
 
 /* Styling for the registration form container */
@@ -1513,7 +1534,7 @@ footer ul li a:hover {
 .u-columns {
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   /* height: 10vh; */
 }
 

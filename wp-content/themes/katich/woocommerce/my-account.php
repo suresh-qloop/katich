@@ -20,24 +20,33 @@ if (!defined('ABSPATH')) {
 	if (is_user_logged_in()) { ?>
 
 		<h1><?php the_title(); ?></h1>
-		<div class="my-account">
+		<!-- <div class="my-account">
 			<h2>Welcome, <?php echo $current_user->display_name; ?></h2>
 			<p>Email: <?php echo $current_user->user_email; ?></p>
-		</div>
+		</div> -->
 
-		<?php
-		do_action('woocommerce_account_navigation');
-		?>
-		<div class="woocommerce-MyAccount-content">
-			<?php
-			/**
-			 * My Account content.
-			 *
-			 * @since 2.6.0
-			 */
-			do_action('woocommerce_account_content');
+		<div class="woo-myaccount">
+			<nav class="woocommerce-MyAccount-navigation"  role="tablist">
+				<ul>
+					<?php foreach (wc_get_account_menu_items() as $endpoint => $label) : ?>
+						<li class="<?php echo wc_get_account_menu_item_classes($endpoint); ?>">
+							<a href="<?php echo esc_url(wc_get_account_endpoint_url($endpoint)); ?>"><?php echo esc_html($label); ?></a>
+						</li>
+					<?php endforeach; ?>
+				</ul>
+			</nav>
 
-			?>
+			<div class="woocommerce-MyAccount-content">
+				<?php
+				/**
+				 * My Account content.
+				 *
+				 * @since 2.6.0
+				 */
+				do_action('woocommerce_account_content');
+
+				?>
+			</div>
 		</div>
 
 
