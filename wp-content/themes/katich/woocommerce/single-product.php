@@ -62,7 +62,7 @@ do_action('woocommerce_before_cart');
 <section class="similar space">
 	<div class="container">
 		<div class="title title-center mb-6">
-			<!-- <h2><?php the_title(); ?></h2> -->
+			<h2>Slični proizvodi</h2>
 		</div>
 		<div class="products-wrapper">
 
