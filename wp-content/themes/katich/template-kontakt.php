@@ -23,27 +23,6 @@ wp_head();
             </article>
             <article class="contact-form">
                 <?php echo do_shortcode('[contact-form-7 id="119" title="Contact form 1"]'); ?>
-                <!-- <form action="">
-                    <fieldset>
-                        <label for="">Ime i prezime</label>
-                        <input type="text" placeholder="Unesite Vaše ime i prezime">
-                    </fieldset>
-                    <fieldset>
-                        <label for="">E-mail</label>
-                        <input type="text" placeholder="Unesite e-mail adresu">
-                    </fieldset>
-                    <fieldset class="w-100">
-                        <label for="">Broj telefona</label>
-                        <input type="text" placeholder="Unesite broj telefona">
-                    </fieldset>
-                    <fieldset class="w-100">
-                        <label for="">Poruka</label>
-                        <textarea name="" id="" cols="10" rows="5" placeholder="Tekst poruke"></textarea>
-                    </fieldset>
-                    <fieldset class="w-100">
-                        <button class="btn btn-primary">Pošaljite poruku</button>
-                    </fieldset>
-                </form> -->
             </article>
         </div>
     </div>
