@@ -174,6 +174,49 @@ function bottom_slider_shortcode($atts)
 }
 add_shortcode('bottom-slider', 'bottom_slider_shortcode');
 
+// info-section
+function info_section()
+{
+    $labels3 = array(
+        'name' => 'Info Section',
+        'singular_name' => 'Info Section',
+        'add_new' => 'Add New',
+        'add_new_item' => 'Add New Info Section',
+        'edit_item' => 'Edit Info Section',
+        'new_item' => 'New Info Section',
+        'view_item' => 'View Info Section',
+        'search_items' => 'Search Info Section',
+        'not_found' => 'No Info Section found',
+        'not_found_in_trash' => 'No Info Section found in Trash',
+        'parent_item_colon' => 'Parent Info:',
+        'menu_name' => 'Info Section',
+    );
+
+    $args3 = array(
+        'labels' => $labels3,
+        'public' => true,
+        'has_achive' => false,
+        'publicly_queryable' => false,
+        'show_ui' => true,
+        'menu_icon' => 'dashicons-info',
+        'query_var' => true,
+        'rewrite' => array('slug' => 'info'),
+        'capability_type' => 'post',
+        'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt', 'custom-fields' ),
+    );
+
+    register_post_type('info', $args3);
+}
+add_action('init', 'info_section');
+
+function info_section_shortcode($atts)
+{
+    ob_start();
+    $output = ob_get_clean();
+    return $output;
+}
+add_shortcode('info-section', 'info_section_shortcode');
+
 
 //WooCommerce Theme Support
 function katich_woocommerce_support()

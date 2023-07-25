@@ -70,18 +70,23 @@ do_action('woocommerce_before_cart');
 </section>
 <section class="info-section">
     <div class="container">
-        <article>
-            <img src="<?php bloginfo('template_directory'); ?>/images/besplatna-dostava.svg" alt="Katich - Katić Winery"> <!--/images/besplatna-dostava.svg-->
-            <h3>Besplatna dostava iznad 60 eura!</h3>
-        </article>
-        <article>
-            <img src="<?php bloginfo('template_directory'); ?>/images/sigurna-kupovina.svg" alt="Katich - Katić Winery">
-            <h3>Zajamčena sigurna kupovina!</h3>
-        </article>
-        <article>
-            <img src="<?php bloginfo('template_directory'); ?>/images/kvaliteta.svg" alt="Katich - Katić Winery">
-            <h3>Kvaliteta koja ne poznaje granice!</h3>
-        </article>
+
+        <?php
+        $info_posts = new WP_Query(array(
+            'post_type' => 'info',
+            'posts_per_page' => -1,
+            'orderby' => 'menu_order',
+            'order' => 'ASC',
+        ));
+
+        while ($info_posts->have_posts()) : $info_posts->the_post();
+        ?>
+            <article>
+                <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="Katich - Katić Winery">
+                <h3><?php the_title() ?></h3>
+            </article>
+        <?php endwhile; ?>
+
     </div>
 </section>
 
