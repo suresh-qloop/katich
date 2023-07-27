@@ -52,7 +52,7 @@ if ($custom_query_example->have_posts()) {
             $category_id = $custom_categories[0]->term_id;
             // prinT_r($category_id);
             // exit;
-            if ($category_id == '32') {
+            if ($category_id == '21') {
                 // Even post
                 $even_posts[] = $category_id;
 
@@ -72,7 +72,7 @@ if ($custom_query_example->have_posts()) {
                     </div>
                 </section>
             <?php
-            } else if ($category_id == '33') {
+            } else if ($category_id == '22') {
                 // Odd post
                 $odd_posts[] = $category_id;
             ?>
