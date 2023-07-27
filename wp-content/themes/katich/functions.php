@@ -352,7 +352,7 @@ add_filter('woocommerce_account_menu_items', 'custom_account_menu_items');
 function hcf_register_meta_boxes()
 {
     $page_id = '22';
-    $template_file = 'template-vinarija.php';
+    $template_file = 'template-winery.php';
     if (isset($_GET['post'])) {
         $post_id = $_GET['post'];
         $template = get_post_meta($post_id, '_wp_page_template', true);
@@ -364,7 +364,7 @@ function hcf_register_meta_boxes()
     }
 
     $page_id = '18';
-    $template_file = 'template-pocetna.php';
+    $template_file = 'template-home.php';
     if (isset($_GET['post'])) {
         $post_id = $_GET['post'];
         $template = get_post_meta($post_id, '_wp_page_template', true);
