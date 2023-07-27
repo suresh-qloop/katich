@@ -1,6 +1,6 @@
 <?php
 
-// Template name:pocetna
+// Template name:home
 
 get_header();
 wp_head();
@@ -33,7 +33,7 @@ do_action('woocommerce_before_cart');
                                 <h1><?php the_title(); ?></h1>
                             </div>
                             <p><?php the_content(); ?></p>
-                            <a href="" class="btn btn-primary">Saznajte više</a>
+                            <a href="" class="btn btn-primary">Find out more</a>
                         </div>
                     </div>
                 </div>
@@ -46,28 +46,38 @@ do_action('woocommerce_before_cart');
         <div id="slider__counter"></div>
         <span class="next"></span>
     </div>
+    <?php wp_reset_postdata(); ?>
 </section>
+
 <section class="space about">
     <div class="container">
         <article class="about-text">
             <div class="title">
-                <h2>O nama</h2>
+                <h2><?php echo esc_attr(get_post_meta(get_the_ID(), 'left_heading', true)); ?></h2>
             </div>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio eum repudiandae laborum id dolor. Laborum iste labore voluptas quos recusandae incidunt exercitationem, at non odit, dolore quidem vel similique quibusdam inventore. Hic necessitatibus rem ullam voluptate at eos vitae optio amet non repellendus? Accusamus accusantium minus aliquid? Velit, ex nemo.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi laborum optio ea eaque quam veniam saepe accusamus, a exercitationem error aliquam, nesciunt repellendus asperiores voluptates veritatis molestias harum nobis ipsum.</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia, quo?</p>
-            <a href="<?php echo esc_url(get_permalink(get_page_by_path('o-nama'))); ?>" class="btn btn-primary">Pročitajte više</a>
+            <p><?php echo esc_attr(get_post_meta(get_the_ID(), 'left_text', true)); ?></p>
+            <a href="<?php echo esc_url(get_permalink(get_page_by_path('o-nama'))); ?>" class="btn btn-primary">Read More</a>
         </article>
         <article class="about-map">
             <div class="title">
-                <h2>Lokacija</h2>
+                <h2><?php echo esc_attr(get_post_meta(get_the_ID(), 'right_heading', true)); ?></h2>
 
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, perferendis!</p>
-            <img src="<?php bloginfo('template_directory'); ?>/images/map.png" alt="Katich - Katić Winery">
+            <p><?php echo esc_attr(get_post_meta(get_the_ID(), 'right_text', true)); ?></p>
+
+            <img src="<?php $image_id = get_post_meta(get_the_ID(), 'image_field', true);
+                        if ($image_id) {
+                            $image_url = wp_get_attachment_url($image_id);
+                            if ($image_url) {
+                                echo  esc_url($image_url);
+                            }
+                        } ?>" alt="Katich - Katić Winery">
+
         </article>
     </div>
 </section>
+
+
 <section class="info-section">
     <div class="container">
 
@@ -88,6 +98,8 @@ do_action('woocommerce_before_cart');
         <?php endwhile; ?>
 
     </div>
+    <?php wp_reset_postdata(); ?>
+
 </section>
 
 <!-- WooCommerce Products in home Page -->
@@ -95,7 +107,7 @@ do_action('woocommerce_before_cart');
 <section class="products-home space">
     <div class="container">
         <div class="title title-center">
-            <h2>Izdvajamo iz ponude</h2>
+            <h2>We highlight from the offer</h2>
         </div>
         <div class="products-wrapper">
 
@@ -133,7 +145,7 @@ do_action('woocommerce_before_cart');
                                         <input class="plus button wp-element-button" type="button" value="+">
                                     </div>
                             </div>
-                            <button type="submit" name="add-to-cart" value="<?php echo esc_attr(get_the_ID()); ?>" class="button alt btn btn-primary btn-cart">Dodajte u košaricu</button>
+                            <button type="submit" name="add-to-cart" value="<?php echo esc_attr(get_the_ID()); ?>" class="button alt btn btn-primary btn-cart">Add to cart</button>
                             </form>
                         </div>
                     </div>
@@ -142,20 +154,22 @@ do_action('woocommerce_before_cart');
             <?php endwhile; ?>
         </div>
         <div class="btn-wrapper">
-            <a href="<?php echo esc_url(get_permalink(get_page_by_path('ponuda'))); ?>" class="btn btn-secondary">Pogledajte ostatak ponude naših vina</a>
+            <a href="<?php echo esc_url(get_permalink(get_page_by_path('ponuda'))); ?>" class="btn btn-secondary">See the rest of our wine offer</a>
         </div>
     </div>
+    <?php wp_reset_postdata(); ?>
+
 </section>
 <section class="about2 space">
     <div class="container">
         <article class="about-title">
             <div class="title">
-                <h2>Naša vinarija</h2>
+                <h2><?php echo esc_attr(get_post_meta(get_the_ID(), 'bottom_heading', true)); ?></h2>
             </div>
-            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse. </h3>
+            <h3><?php echo esc_attr(get_post_meta(get_the_ID(), 'bottom_left', true)); ?></h3>
         </article>
         <article class="about2-text">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p><?php echo esc_attr(get_post_meta(get_the_ID(), 'bottom_right', true)); ?></p>
         </article>
     </div>
 </section>
@@ -174,6 +188,8 @@ do_action('woocommerce_before_cart');
             <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="Katich - Katić Winery">
         </article>
     <?php endwhile; ?>
+    <?php wp_reset_postdata(); ?>
+
 </section>
 
 <?php

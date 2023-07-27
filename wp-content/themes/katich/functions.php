@@ -202,7 +202,7 @@ function info_section()
         'query_var' => true,
         'rewrite' => array('slug' => 'info'),
         'capability_type' => 'post',
-        'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt', 'custom-fields' ),
+        'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'),
     );
 
     register_post_type('info', $args3);
@@ -216,6 +216,119 @@ function info_section_shortcode($atts)
     return $output;
 }
 add_shortcode('info-section', 'info_section_shortcode');
+
+// custom-post for O nama
+function custom_post()
+{
+    $labels4 = array(
+        'name' => 'Custom Post',
+        'singular_name' => 'Custom Post',
+        'add_new' => 'Add New',
+        'add_new_item' => 'Add New Custom Post',
+        'edit_item' => 'Edit Custom Post',
+        'new_item' => 'New Custom Post',
+        'view_item' => 'View Custom Post',
+        'search_items' => 'Search Custom Post',
+        'not_found' => 'No Custom Post found',
+        'not_found_in_trash' => 'No Custom Post found in Trash',
+        'parent_item_colon' => 'Parent Custom:',
+        'menu_name' => 'Custom Post For O nama',
+    );
+
+    $args4 = array(
+        'labels' => $labels4,
+        'public' => true,
+        'has_achive' => false,
+        'publicly_queryable' => false,
+        'show_ui' => true,
+        'menu_icon' => 'dashicons-admin-post',
+        'query_var' => true,
+        'rewrite' => array('slug' => 'custom'),
+        'capability_type' => 'post',
+        'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'),
+    );
+
+    register_post_type('custom', $args4);
+}
+add_action('init', 'custom_post');
+
+function custom_post_shortcode($atts)
+{
+    ob_start();
+    $output = ob_get_clean();
+    return $output;
+}
+add_shortcode('custom-post', 'custom_post_shortcode');
+
+// custom-post for Naša vinarija
+function custom_post1()
+{
+    $labels5 = array(
+        'name' => 'Custom Post',
+        'singular_name' => 'Custom Post',
+        'add_new' => 'Add New',
+        'add_new_item' => 'Add New Custom Post',
+        'edit_item' => 'Edit Custom Post',
+        'new_item' => 'New Custom Post',
+        'view_item' => 'View Custom Post',
+        'search_items' => 'Search Custom Post',
+        'not_found' => 'No Custom Post found',
+        'not_found_in_trash' => 'No Custom Post found in Trash',
+        'parent_item_colon' => 'Parent Custom:',
+        'menu_name' => 'Custom Post For Naša vinarija',
+    );
+
+    $args5 = array(
+        'labels' => $labels5,
+        'public' => true,
+        'has_achive' => false,
+        'publicly_queryable' => false,
+        'show_ui' => true,
+        'menu_icon' => 'dashicons-admin-post',
+        'query_var' => true,
+        'rewrite' => array('slug' => 'custom1'),
+        'capability_type' => 'post',
+        'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'),
+    );
+
+    register_post_type('custom1', $args5);
+
+    $taxonomy_labels = array(
+        'name' => 'Category',
+        'singular_name' => 'Category',
+        'search_items' => 'Search Category',
+        'all_items' => 'All Category',
+        'parent_item' => 'Parent Category',
+        'parent_item_colon' => 'Parent Category:',
+        'edit_item' => 'Edit Category',
+        'update_item' => 'Update Category',
+        'add_new_item' => 'Add New Category',
+        'new_item_name' => 'New Category Name',
+        'menu_name' => 'Category',
+    );
+
+    $taxonomy_args = array(
+        'hierarchical' => true,
+        'labels' => $taxonomy_labels,
+        'show_ui' => true,
+        'show_admin_column' => true,
+        'query_var' => true,
+        'rewrite' => array('slug' => 'category1'), // Change the slug to your desired URL base
+    );
+
+    register_taxonomy('category1', 'custom1', $taxonomy_args);
+}
+add_action('init', 'custom_post1');
+
+
+function custom_post1_shortcode($atts)
+{
+    ob_start();
+    $output = ob_get_clean();
+    return $output;
+}
+add_shortcode('custom-post1', 'custom_post1_shortcode');
+
 
 
 //WooCommerce Theme Support
@@ -233,15 +346,105 @@ function custom_account_menu_items($items)
 }
 add_filter('woocommerce_account_menu_items', 'custom_account_menu_items');
 
+/**
+ * Register meta boxes.
+ */
+function hcf_register_meta_boxes()
+{
+    $page_id = '22';
+    $template_file = 'template-vinarija.php';
+    if (isset($_GET['post'])) {
+        $post_id = $_GET['post'];
+        $template = get_post_meta($post_id, '_wp_page_template', true);
 
-// add_action(
-//     'woocommerce_before_quantity_input_field',
-//     function () {
-//         if (get_theme_mod('has_custom_quantity', 'yes') !== 'yes') {
-//             return;
-//         }
+        // Check if the current page uses the specified page template
+        if ($template === $template_file) {
+            add_meta_box('hcf-1', __('Hello Custom Field', 'hcf'), 'hcf_display_callback', 'page');
+        }
+    }
 
-//         echo '<span class="ct-increase"></span>';
-//         echo '<span class="ct-decrease"></span>';
-//     }
-// );
+    $page_id = '18';
+    $template_file = 'template-pocetna.php';
+    if (isset($_GET['post'])) {
+        $post_id = $_GET['post'];
+        $template = get_post_meta($post_id, '_wp_page_template', true);
+
+        // Check if the current page uses the specified page template
+        if ($template === $template_file) {
+            add_meta_box('hcf-2', __('Another Custom Field', 'hcf'), 'hcf_display_callback_2', 'page');
+        }
+    }
+}
+add_action('add_meta_boxes', 'hcf_register_meta_boxes');
+
+/**
+ * Meta box display callback.
+ *
+ * @param WP_Post $post Current post object.
+ */
+function hcf_display_callback($post)
+{
+    include plugin_dir_path(__FILE__) . './form.php';
+}
+/**
+ * Meta box display callback for the second meta box.
+ *
+ * @param WP_Post $post Current post object.
+ */
+function hcf_display_callback_2($post)
+{
+    include plugin_dir_path(__FILE__) . './form-1.php';
+}
+
+/**
+ * Save meta box content.
+ *
+ * @param int $post_id Post ID
+ */
+function hcf_save_meta_box($post_id)
+{
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
+    if ($parent_id = wp_is_post_revision($post_id)) {
+        $post_id = $parent_id;
+    }
+    $fields = [
+        'top_right',
+        'top_left',
+        'bottom_right',
+        'bottom_left',
+    ];
+    $fields1 = [
+        'right_heading',
+        'right_text',
+        'left_heading',
+        'left_text',
+        'image_field',
+        'bottom_heading',
+        'bottom_left',
+        'bottom_right'
+    ];
+    foreach ($fields as $field) {
+        if (array_key_exists($field, $_POST)) {
+            update_post_meta($post_id, $field, sanitize_text_field($_POST[$field]));
+        }
+    }
+    // foreach ($fields1 as $field) {
+    foreach ($fields1 as $field) {
+        if ('image_field' === $field) {
+            // Handle the image upload
+            if (!empty($_FILES['image_field']['name'])) {
+                $attachment_id = media_handle_upload('image_field', $post_id);
+                if (is_wp_error($attachment_id)) {
+                    // Handle the upload error (if any)
+                } else {
+                    // Image uploaded successfully, save the attachment ID as post meta
+                    update_post_meta($post_id, 'image_field', $attachment_id);
+                }
+            }
+        } elseif (array_key_exists($field, $_POST)) {
+            update_post_meta($post_id, $field, sanitize_text_field($_POST[$field]));
+        }
+    }
+}
+
+add_action('save_post', 'hcf_save_meta_box');

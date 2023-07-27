@@ -1,6 +1,6 @@
 <?php
 
-// Template Name:kontakt
+// Template Name:contact
 
 get_header();
 wp_head();
@@ -19,7 +19,7 @@ wp_head();
                 <div class="title">
                     <h1><?php the_title(); ?></h1>
                 </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis aperiam, eveniet alias ea repudiandae id? Deserunt assumenda quo ut amet officiis rerum animi! Quos eum, hic ducimus quis cumque maiores quo magni quaerat omnis delectus voluptatibus fugit repellat ab ipsam blanditiis doloremque ex est illum harum laboriosam. Voluptatibus, eius asperiores.</p>
+                <p><?php the_content(); ?></p>
             </article>
             <article class="contact-form">
                 <?php echo do_shortcode('[contact-form-7 id="119" title="Contact form 1"]'); ?>

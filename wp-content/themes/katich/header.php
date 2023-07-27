@@ -63,6 +63,7 @@
                         <!-- <a href="<? //php esc_attr_e('Registracija', 'woocommerce'); 
                                         ?>">Registracija</a> -->
                     <?php } ?>
+                    
                 </article>
             </div>
         </div>

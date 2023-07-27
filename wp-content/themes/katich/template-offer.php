@@ -1,6 +1,6 @@
 <?php
 
-// Template Name:ponuda
+// Template Name:offer
 
 get_header();
 wp_head();
@@ -55,7 +55,7 @@ do_action('woocommerce_before_cart');
                                         <input class="plus button wp-element-button" type="button" value="+">
                                     </div>
                             </div>
-                            <button type="submit" name="add-to-cart" value="<?php echo esc_attr(get_the_ID()); ?>" class="button alt btn btn-primary btn-cart">Dodajte u košaricu</button>
+                            <button type="submit" name="add-to-cart" value="<?php echo esc_attr(get_the_ID()); ?>" class="button alt btn btn-primary btn-cart">Add to cart</button>
                             </form>
                         </div>
                     </div>
