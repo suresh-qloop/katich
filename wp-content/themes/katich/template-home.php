@@ -56,7 +56,7 @@ do_action('woocommerce_before_cart');
                 <h2><?php echo esc_attr(get_post_meta(get_the_ID(), 'left_heading', true)); ?></h2>
             </div>
             <p><?php echo esc_attr(get_post_meta(get_the_ID(), 'left_text', true)); ?></p>
-            <a href="<?php echo esc_url(get_permalink(get_page_by_path('o-nama'))); ?>" class="btn btn-primary">Read More</a>
+            <a href="<?php echo esc_url(get_permalink(get_page_by_path('o-name'))); ?>" class="btn btn-primary">Read More</a>
         </article>
         <article class="about-map">
             <div class="title">
