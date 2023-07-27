@@ -50,7 +50,7 @@
                 <article class="header-bottom">
                     <a href="<?php echo wc_get_cart_url(); ?>" class="header-cart">
                         <img src="<?php bloginfo('template_directory'); ?>/images/cart.svg" alt="Katich - Katić Winery">
-                        <span>Moja košarica</span>
+                        <span>My Shopping Cart</span>
                         <span class="cart-quantity">(<?php echo WC()->cart->get_cart_contents_count(); ?>)</span>
                     </a>
                 </article>

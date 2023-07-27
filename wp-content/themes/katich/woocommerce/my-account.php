@@ -89,7 +89,7 @@ if (!defined('ABSPATH')) {
 					<?php do_action('woocommerce_login_form_end'); ?>
 
 				</form>
-				<h4>Don't have an account? <a href="<?php esc_attr_e('Registracija', 'woocommerce'); ?>">Registracija</a></h4>
+				<h4>Don't have an account? <a href="<?php esc_attr_e('registration', 'woocommerce'); ?>">Registration</a></h4>
 
 				<?php if ('yes' === get_option('woocommerce_enable_myaccount_registration')) : ?>
 
